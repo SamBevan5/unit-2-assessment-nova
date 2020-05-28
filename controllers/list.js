@@ -21,14 +21,14 @@ listsController.post('/', (req, res) => {
     }
     
     List.create(req.body, (error, createdList) => {
-        res.redirect('/items');
+        res.redirect('/');
     });
 });
 
 //DELETE ROUTE
 listsController.delete('/:id', (req, res) => {
     List.findByIdAndRemove(req.params.id, (err, data) => {
-        res.redirect('/items');
+        res.redirect('/');
     });
 });
 

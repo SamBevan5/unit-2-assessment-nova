@@ -32,7 +32,7 @@ class Index extends React.Component {
                             );
                         })}
                     </ul>
-                    <form action="/items" method="POST">
+                    <form action="/" method="POST">
                         To-Do Item: <input type="text" name="name" /><br/>
                         <input type="submit" name="" value="Create Item"/>
                     </form>
