@@ -13,7 +13,7 @@ listsController.get('/', (req, res) => {
 });
 
 // Create
-listsController.post('/items', (req, res) => {
+listsController.post('/', (req, res) => {
     if (req.body.isComplete === 'on') {
         req.body.isComplete = true;
     } else {
