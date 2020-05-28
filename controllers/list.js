@@ -4,7 +4,7 @@ const listsController = express.Router();
 const List = require('../models/list.js');
 
 // Index
-listsController.get('/', (req, res) => {
+listsController.get('/items', (req, res) => {
     List.find({}, (error, allLists) => {
         res.render('Index', {
             item: allLists,
@@ -13,7 +13,7 @@ listsController.get('/', (req, res) => {
 });
 
 // Create
-listsController.post('/', (req, res) => {
+listsController.post('/items', (req, res) => {
     if (req.body.isComplete === 'on') {
         req.body.isComplete = true;
     } else {
@@ -21,14 +21,14 @@ listsController.post('/', (req, res) => {
     }
     
     List.create(req.body, (error, createdList) => {
-        res.redirect('/');
+        res.redirect('/items');
     });
 });
 
 //DELETE ROUTE
 listsController.delete('/:id', (req, res) => {
     List.findByIdAndRemove(req.params.id, (err, data) => {
-        res.redirect('/');
+        res.redirect('/items');
     });
 });
 
