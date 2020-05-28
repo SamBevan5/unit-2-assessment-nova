@@ -31,11 +31,11 @@ app.use(express.json());
 app.use(methodOverride('_method'));
 app.set('view engine', 'jsx');
 app.engine('jsx', require('express-react-views').createEngine());
-app.use( listsController);
+app.use(`/`,listsController);
 
-app.get('/', (req, res) => {
-    res.render('Index');
-})
+// app.get('/', (req, res) => {
+//     res.render('Index');
+// })
 
 //Listener
 app.listen(PORT, () => console.log( 'Listening on port:', PORT));
