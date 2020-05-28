@@ -4,7 +4,7 @@ const listsController = express.Router();
 const List = require('../models/list.js');
 
 // Index
-listsController.get('/items', (req, res) => {
+listsController.get('/', (req, res) => {
     List.find({}, (error, allLists) => {
         res.render('Index', {
             item: allLists,
